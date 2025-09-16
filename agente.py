@@ -19,7 +19,7 @@ llm = ChatGoogleGenerativeAI(
 )
 
 # Carregar planilha final processada
-df = pd.read_excel("dados/VR_MENSAL_CALCULADO.xlsx")
+df = pd.read_excel("dados/VR MENSAL 05.2025.xlsx")
 print(f"[DEBUG] Planilha carregada com {len(df)} registros e {len(df.columns)} colunas.")
 
 # Criar agente especializado em DataFrame
@@ -39,7 +39,7 @@ Você é um analista de RH que responde perguntas sobre a base de VR.
  'VR TOTAL', 'EMPRESA (80%)', 'COLABORADOR (20%)']
 
 📌 Regras de resposta:
-1. Sempre use apenas os dados do DataFrame carregado (VR_MENSAL_CALCULADO.xlsx).
+1. Sempre use apenas os dados do DataFrame carregado (VR MENSAL 05.2025.xlsx).
 2. Nunca crie DataFrames fictícios ou invente valores.
 3. Trabalhe diretamente com as colunas listadas acima.
 4. Se a pergunta envolver cálculos (soma, média, contagem etc.), mostre:

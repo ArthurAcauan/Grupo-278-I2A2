@@ -256,11 +256,11 @@ def calcular_valores_vr(df_base: pd.DataFrame, bases: dict) -> pd.DataFrame:
     print("\n[DEBUG] Valores de VR calculados!")
     return df
 
-def exportar_planilha_final(df_vr: pd.DataFrame, caminho_saida: str = "dados/VR_MENSAL_CALCULADO.xlsx"):
+def exportar_planilha_final(df_vr: pd.DataFrame, caminho_saida: str = "dados/VR MENSAL 05.2025.xlsx"):
     """
-    Exporta a base final no layout esperado da planilha 'VR Mensal 05.2025'.
+    Exporta a base final no layout esperado da planilha 'VR MENSAL 05.2025'.
+    Esse já é o nome obrigatório da entrega.
     """
-    # Define colunas no padrão do modelo (ajustar se necessário)
     df_final = pd.DataFrame({
         "MATRICULA": df_vr["MATRICULA"],
         "NOME/CARGO": df_vr["TITULO DO CARGO"],
@@ -272,7 +272,7 @@ def exportar_planilha_final(df_vr: pd.DataFrame, caminho_saida: str = "dados/VR_
         "COLABORADOR (20%)": df_vr["VR_COLABORADOR"],
     })
 
-    # Salvar em Excel
+    # Salvar diretamente no nome exigido
     df_final.to_excel(caminho_saida, index=False)
     print(f"\n[DEBUG] Planilha final exportada para: {caminho_saida}")
     return df_final
